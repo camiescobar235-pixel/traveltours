@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="facebook-domain-verification" content="k03cw9t8xvsngj87b3hhe6lhiye4vs" />
+    <title>Traveltours - Agencia de Viajes y Turismo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #23303d;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, rgba(15,76,129,0.85), rgba(0,188,212,0.75)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+        header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+            background: linear-gradient(45deg, rgba(15,76,129,0.6), rgba(255,111,97,0.3));
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .header-content {
+            text-align: center;
+      position: relative;
+      z-index: 2;
+            padding: 80px 0;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 76, 129, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.12);
+            color: #ff6f61;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: #f1f5f9;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0f4c81;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-highlight {
+            background: linear-gradient(45deg, #0f4c81, #00bcd4);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .experience-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: #f7fafc;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 5px solid #ff6f61;
+            transition: all 0.3s ease;
+            height: auto;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #0f4c81;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+      position: relative;
+            padding-left: 20px;
+        }
+
+        .service-list li:before {
+            content: "•";
+            color: #ff6f61;
+            font-weight: bold;
+      position: absolute;
+            left: 0;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Three Column Services Layout */
+        .services-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .service-overview-card {
+            background: linear-gradient(45deg, #0f4c81, #00bcd4);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .service-overview-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffdacd;
+        }
+
+        .service-overview-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-overview-card li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: #f1f5f9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #00bcd4;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            color: #0f4c81;
+            margin-bottom: 5px;
+        }
+
+        .team-member .position {
+            color: #00bcd4;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #0f4c81, #00bcd4);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ffdacd;
+        }
+
+        .contact-item {
+      display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .contact-item i {
+            color: #ffdacd;
+            margin-right: 15px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+        .contact-item span {
+            line-height: 1.6;
+        }
+
+        .business-hours {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .business-hours h4 {
+            color: #ffdacd;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .business-hours p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .business-hours strong {
+            color: #ffdacd;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                padding: 40px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Additional styling to match Traveltours theme */
+        .highlight-text {
+            color: #ff6f61;
+            font-weight: 600;
+        }
+
+        .mission-section {
+            background: linear-gradient(45deg, #0f4c81, #00bcd4);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .mission-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive WhatsApp button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">TRAVELTOURS</h1>
+                <p class="logo-subtitle">Agencia de Viajes y Turismo</p>
+                <p class="tagline">Descubrí el mundo con Traveltours: paquetes, vuelos y hoteles al mejor precio. Asesoramiento experto para tu próximo viaje desde Mar del Plata.</p>
+      </div>
+    </div>
+  </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section (moved up) -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Viajes a medida, con la mejor financiación y asistencia integral</p>
+
+            <!-- Three Column Overview -->
+            <div class="services-overview">
+                <div class="service-overview-card">
+                    <h4>Paquetes Turísticos</h4>
+                    <ul>
+                        <li>Destinos nacionales e internacionales</li>
+                        <li>Escapadas y viajes familiares</li>
+                        <li>Luna de miel y viajes románticos</li>
+                        <li>Cruceros y circuitos guiados</li>
+                        <li>Promociones y ofertas exclusivas</li>
+                    </ul>
+              </div>
+                <div class="service-overview-card">
+                    <h4>Vuelos y Hoteles</h4>
+                    <ul>
+                        <li>Reservas de vuelos a todo el mundo</li>
+                        <li>Alojamiento para todos los presupuestos</li>
+                        <li>Opciones flexibles y reprogramables</li>
+                        <li>Atención personalizada 24/7</li>
+                        <li>Beneficios y upgrades según disponibilidad</li>
+                    </ul>
+            </div>
+                <div class="service-overview-card">
+                    <h4>Asistencia al Viajero</h4>
+                    <ul>
+                        <li>Seguros de viaje y asistencia médica</li>
+                        <li>Traslados y excursiones</li>
+                        <li>Asesoramiento en visados</li>
+                        <li>Itinerarios personalizados</li>
+                        <li>Tips locales y experiencias únicas</li>
+                    </ul>
+          </div>
+      </div>
+      
+            <!-- Detailed Services -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Paquetes a Medida</h3>
+                    <p>Traveltours diseña viajes únicos para cada necesidad. Te acompañamos en todo el proceso para que sólo te ocupes de disfrutar:</p>
+                    <ul class="service-list">
+                        <li>City tours y experiencias locales</li>
+                        <li>Cruceros y viajes temáticos</li>
+                        <li>Escapadas de fin de semana</li>
+                        <li>Viajes grupales y corporativos</li>
+                        <li>Financiación y cuotas</li>
+                    </ul>
+          </div>
+          
+                <div class="service-card">
+                    <h3>Reservas y Aéreos</h3>
+                    <p>Nos encargamos de encontrar las mejores alternativas y combinaciones para que tu viaje sea perfecto:</p>
+                    <ul class="service-list">
+                        <li>Comparación de tarifas en tiempo real</li>
+                        <li>Hoteles y alojamientos verificados</li>
+                        <li>Alquiler de autos</li>
+                        <li>Trenes y buses</li>
+                        <li>Atención ante cambios e imprevistos</li>
+                    </ul>
+          </div>
+          
+                <div class="service-card">
+                    <h3>Asistencia Integral</h3>
+                    <p>Te acompañamos antes, durante y después del viaje con soporte experto:</p>
+                    <ul class="service-list">
+                        <li>Seguros, visados y requisitos</li>
+                        <li>Excursiones y experiencias</li>
+                        <li>Traslados aeropuerto/hotel</li>
+                        <li>Asesoramiento gastronómico y cultural</li>
+                    </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (moved below) -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Quiénes somos?</h2>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Traveltours es una agencia de viajes con base en Mar del Plata dedicada a crear experiencias memorables a medida. Combinamos asesoramiento profesional, tecnología y una red global de proveedores para ofrecerte la mejor relación precio-calidad.
+                    </p>
+                    <p class="about-text">
+                        Nuestro equipo experto te acompaña desde la inspiración hasta el regreso, cuidando cada detalle de tu itinerario para que tu viaje sea cómodo, seguro y emocionante.
+                    </p>
+                </div>
+                <div>
+                    <div class="experience-highlight">
+                        <h3>Viaja con Traveltours</h3>
+              </div>
+                    <p class="about-text">
+                        Creamos itinerarios únicos con <strong class="highlight-text">ATENCIÓN PERSONALIZADA</strong> y soporte 24/7. Desde escapadas cercanas hasta grandes aventuras internacionales.
+                    </p>
+                    <div class="mission-section">
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser tu agencia de confianza para descubrir el mundo, con experiencias auténticas y a tu medida.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Conocé nuestro equipo</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face" alt="Sofia Romero">
+                    <h4>Sofia Romero</h4>
+                    <p class="position">Directora General</p>
+                    <p class="quote">"En Traveltours transformamos tus sueños en viajes inolvidables"</p>
+          </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=face" alt="Alejandro Torres">
+                    <h4>Alejandro Torres</h4>
+                    <p class="position">Gerente de Operaciones</p>
+                    <p class="quote">"Cada detalle cuenta. Organizamos tu viaje para que todo salga perfecto"</p>
+            </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" alt="Valentina Cruz">
+                    <h4>Valentina Cruz</h4>
+                    <p class="position">Coordinadora de Alojamiento</p>
+                    <p class="quote">"Diseñamos itinerarios únicos para que vivas experiencias auténticas"</p>
+            </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=150&h=150&fit=crop&crop=face" alt="Martín Herrera">
+                    <h4>Martín Herrera</h4>
+                    <p class="position">Especialista en Atención al Cliente</p>
+                    <p class="quote">"Tu tranquilidad es lo primero. Estamos para ayudarte 24/7"</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Tenés alguna consulta?</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ubicación de la Oficina</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chacabuco 9786, Mar Del Plata</span>
+        </div>
+        
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+5491164705464</span>
+            </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>agenciarooming@gmail.com</span>
+          </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>CUIL: 20398346719</span>
+          </div>
+        </div>
+        
+                <div class="contact-info">
+                    <div class="business-hours">
+                        <h4>Horarios de Atención</h4>
+                        <p><strong>Días de atención:</strong></p>
+                        <p>Lunes a Viernes: 9:00 a 18:00 hs</p>
+                        <p>Sábados: 9:00 a 15:00 hs</p>
+                        <br>
+                        <p><strong>Atención de emergencias:</strong></p>
+                        <p>Disponible 24/7</p>
+                        <p>WhatsApp: +5491164705464</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Traveltours. Todos los derechos reservados</p>
+            <p>Agencia de viajes y turismo en Mar del Plata</p>
+    </div>
+  </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scrolling effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(15, 76, 129, 0.98)';
+            } else {
+                nav.style.background = 'rgba(15, 76, 129, 0.95)';
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491164705464?text=Hola%2C%20quiero%20info%20sobre%20paquetes%2C%20vuelos%20y%20hoteles" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
